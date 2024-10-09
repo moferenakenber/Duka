@@ -17,7 +17,7 @@
         </div>
 
 
-        <h3>check git push and pull on server</h3>
+        <h3>items image name descrition</h3>
 
 
     </div>

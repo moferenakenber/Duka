@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Dashboard;
 use App\Models\User;
 //use App\View\Components\Alert;
 //use App\View\Components\report;
@@ -39,9 +40,11 @@ use App\Models\User;
             return view('resetpage');
             })->name('reset');
 
+       // Route::get('/dashboard', [Dashboard::class, 'app'])->name('app');
+
         Route::get('/dashboard', function () {
             return view('dashboard');
-            })->name('dashboard');
+        })->name('dashboard');
 
         Route::get('/userprofile', function () {
             return view('userprofile');
@@ -53,7 +56,7 @@ use App\Models\User;
 
         Route::get('/customers', function () {
             return view('customers');
-            })->name('customes');
+            })->name('customers');
 
         Route::get('/items', function () {
             return view('items');
@@ -86,7 +89,7 @@ use App\Models\User;
 
         Route::get('/greeting', function () {
             $my_array = ['array1', 'array2', 'array3', 'array4', 'array5'];
-            return view('greeting')
+            return view('test/greeting')
                     ->with('name', 'yonathan')
                     ->with('array', $my_array );
             });

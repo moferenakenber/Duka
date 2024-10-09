@@ -14,7 +14,7 @@ body {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 110px;
+    width: 240px;
     height: 100vh;
     padding: 0 1.7rem;
     color: #fff;
@@ -90,7 +90,7 @@ body {
 .user--info {
    display: flex;
    align-items: center;
-   gap: 1; 
+   gap: 1;
 }
 
 .search--box {

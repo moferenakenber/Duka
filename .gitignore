@@ -1,0 +1,25 @@
+.env
+.idea
+node_modules
+vender
+/node_modules
+#The two files below commented out on Sep 6, 3:00 AM to add the css files so as to make changes to the ui
+#then deleted the comments since i was wrong and all the things i needed were was in the public files
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+.env
+.env
+.env
+.idea/workspace.xml

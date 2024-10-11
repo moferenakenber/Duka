@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SessionsController;
@@ -65,6 +66,8 @@ use App\Models\User;
         Route::get('/additempage',function () {
             return view('additempage');
         });
+
+        Route::post('/items', [ItemsController::class, 'store']);
 
         Route::get('/carts', function () {
             return view('carts');

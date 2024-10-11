@@ -17,14 +17,14 @@
                                         <br>
                                         <label for="description">Product-description</label>
                                         <br>
-                                        <textarea rows="5" cols="30" name="Description" placeholder="enter product description"></textarea>
+                                        <textarea rows="5" cols="30" name="description" placeholder="enter product description"></textarea>
 
                                 <h2>Category</h2>
                                 <div class="product-category">
 
                                         <label for="Category">product-category</label>
                                         <br>
-                                        <select name="Category">
+                                        <select name="category">
                                             <option value="office">office</option>
                                             <option value="school">school</option>
                                             <option value="kids">Kids</option>
@@ -45,7 +45,7 @@
                                     <div class="pricing">
 
                                             <label>Price</label><br>
-                                            <input type="number" min="0">
+                                            <input type="number" name="price" min="0">
 
                                     </div>
                                 <br>

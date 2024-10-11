@@ -62,6 +62,10 @@ use App\Models\User;
             return view('items');
             })->name('items');
 
+        Route::get('/additempage',function () {
+            return view('additempage');
+        });
+
         Route::get('/carts', function () {
             return view('carts');
             })->name('carts');

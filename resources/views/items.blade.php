@@ -1,13 +1,13 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-
+{{--
 <!DOCTYPE html>
 <html lang=en>
 <head>
 <meta charset="UTF-8">
 <title>Yewbdar Stationery</title>
-<link rel="stylesheet" href="dashboard.css"/>
+<link rel="stylesheet" href="dashboard.css"/>--}}
 <div class="main--content">
     <div class="header--wrapper">
         <div class="header--title">
@@ -20,7 +20,8 @@
             </div>
             <!--user image-->
         </div>
-        <a href="additempage.html" class="additem">+</a>
+        <a href="additempage" class="additem">+</a>
     </div>
+</div>
 
 @endsection

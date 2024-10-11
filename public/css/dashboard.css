@@ -117,3 +117,17 @@ body {
 .search--box i:hover {
     transform: scale(1.2);
 }
+
+.additem {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:rgba(113, 99, 186, 255);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+}

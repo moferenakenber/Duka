@@ -24,7 +24,14 @@ class DatabaseSeeder extends Seeder
             'fullname' => 'yonathan',
             'username' => 'yonathan',
             'email' => 'yhunetaw@gmail.com',
-            'password' => Hash::make('secret')
+            'password' => Hash::make('12345')
+        ]);
+
+        \App\Models\User::create([
+            'fullname' => 'milli',
+            'username' => 'milli',
+            'email' => 'milli@gmail.com',
+            'password' => Hash::make('12345')
         ]);
     }
 }

@@ -2,7 +2,7 @@
 <div class="sidebar">
     <div class="logo"></div>
     <ul class="menu">
-        <li class="active">
+        <li>
             <a href="dashboard">
                 <i class='bx bxs-dashboard'></i>
                 <span>Dashboard</span>

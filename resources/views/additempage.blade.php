@@ -10,7 +10,10 @@
             <div class="container">
                         <h2>Description</h2>
                         <div class="product-description">
-                            <form action="additempage" method="POST">
+                            <form action="items" method="POST">
+                                @csrf
+                                <h2>Product Name</h2>
+                                <div class="product-category">
                                         <label for="name">Product Name</label>
                                         <br>
                                         <input type="text" id="name" name="name">
@@ -18,7 +21,7 @@
                                         <label for="description">Product-description</label>
                                         <br>
                                         <textarea rows="5" cols="30" name="description" placeholder="enter product description"></textarea>
-
+                                </div>
                                 <h2>Category</h2>
                                 <div class="product-category">
 
@@ -33,12 +36,14 @@
 
                                         </select>
                                 </div>
-                                <h2>Selling Type</h2>
+                                <h2>Packaging Selling Options </h2>
                                     <div class="selling-type">
+                 {{-- By adding [] to the name the result of the input will be sent as an
+                                      array since the user may select two or more options --}}
 
-                                            <input type="checkbox" name="type" value="pieces" >Pieces<br>
-                                            <input type="checkbox" name="type" value="packet" >Packet<br>
-                                            <input type="checkbox" name="type" value="cartoon" >Cartoon<br>
+                                            <input type="checkbox" name="option[]" value="pieces" >Pieces<br>
+                                            <input type="checkbox" name="option[]" value="packet" >Packet<br>
+                                            <input type="checkbox" name="option[]" value="cartoon" >Cartoon<br>
 
                                     </div>
                                 <h2>pricing</h2>
@@ -49,6 +54,26 @@
 
                                     </div>
                                 <br>
+
+                                <h2>Status</h2>
+                                <div class="product-category">
+
+                                    <label for="Category">product-category</label>
+                                    <br>
+                                    <select name="status">
+                                        <option value="Available">Available</option>
+                                        <option value="Not Available">Not Available</option>
+                                    </select>
+                                </div>
+
+                                <h2>Stock</h2>
+                                <div class="pricing">
+
+                                    <label>Stock</label><br>
+                                    <input type="number" name="stock" min="0">
+
+                                </div>
+
                                     <div class="add-button">
                                         <button>add product</button>
                                     </div>

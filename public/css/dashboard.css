@@ -10,7 +10,7 @@ body {
     display: flex;
 }
 .sidebar {
-    position: static;
+    position: sticky;
     top: 0;
     left: 0;
     bottom: 0;
@@ -23,17 +23,13 @@ body {
     background: #71b7e6;
 }
 
-.sidebar:hover {
-    width: 240px;
-    transition: 0.5%;
-}
+
 .logo {
     height:80px;
     padding: 16px;
 }
 .menu {
     height: 88%;
-     /* changed below position from relative to fixed */
     position: relative;
     list-style: none;
     padding: 0;
@@ -44,7 +40,7 @@ body {
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
 }
-.menu li:hover, .active{
+.menu li:hover, .menu li:active {
     background: #e0e0e058;
 }
 
@@ -74,23 +70,25 @@ body {
 
 .header--wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     background: #fff;
     border-radius: 10px;
     padding: 10px 2rem;
     margin-bottom: 1rem;
+    justify-content: flex-end;
 }
 
 .header--title {
     color: rgba(113, 99, 186, 255);
+    margin-right: auto;
+
 }
 
 .user--info {
-   display: flex;
-   align-items: center;
-   gap: 1;
+    display: flex;
+    align-items: center;
+    gap: 1;
 }
 
 .search--box {
@@ -99,7 +97,6 @@ body {
     color: rgba(113, 99, 186, 255);
     display: flex;
     align-items: center;
-    gap: 5px;
     padding: 4px 12px;
 }
 
@@ -118,6 +115,174 @@ body {
     transform: scale(1.2);
 }
 
+/* card container */
+.card--container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 18px;
+}
+
+.card--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.main--title {
+    color: rgba(113, 99, 186, 255);
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.payment--card {
+    background: rgb(229, 233, 223);
+    border-radius: 18px;
+    padding: 1.2rem;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+}
+
+.payment--card:hover {
+    transform: translate(-5px);
+}
+
+.card--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.amount {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.amount--value {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.icon {
+    color: #fff;
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    background: red;
+}
+
+.card--detail {
+    font-size: 18px;
+    color: #777777;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* color */
+
+.light-red {
+    background: rgb(251, 233, 233);
+}
+
+.light-purple {
+    background: rgb(254, 226, 254);
+}
+
+.light-green {
+    background: rgb(235, 254, 235);
+}
+
+.light-blue {
+    background: rgb(236, 236, 254);
+}
+
+.dark-red {
+    background: red;
+}
+
+.dark-purple {
+    background: purple;
+}
+.dark-green {
+    background: green;
+}
+.dark-blue {
+    background: blue;
+}
+
+
+/* tabuler section */
+.tabular--wrapper {
+    background: #fff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: rgba(113, 99, 186, 255);
+    color: #fff;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody {
+    background: #f2f2f2;
+}
+
+td {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background: #fff;
+}
+
+tfoot {
+    background: rgba(113, 99, 186, 255);
+    font-weight: bold;
+    color: #fff;
+}
+
+tfoot td {
+    padding: 15px;
+    color: #fff;
+}
+
+.table-container button {
+    color: green;
+    background: none;
+    cursor: pointer;
+}
+
 .additem {
     display: inline-block;
     width: 50px;
@@ -130,4 +295,19 @@ body {
     font-size: 24px;
     text-decoration: none;
     cursor: pointer;
+    margin-left: 5px;
+
+
+}
+
+td img {
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+img:hover {
+    transform: scale(5);
 }

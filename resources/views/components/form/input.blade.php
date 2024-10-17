@@ -1,6 +1,6 @@
 
 
-<form action="/custumer" method="post">
+<form action="/customer" method="POST">
     @csrf
     <label for="firstname">First name</label><br>
     <input type="text" id="firstname" name="firstname" value="Abebe"><br>

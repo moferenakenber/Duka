@@ -14,6 +14,7 @@
                 </div>
                 <!--user image-->
             </div>
+            <a href="additempage" class="additem">+</a>
         </div>
     </div>
 

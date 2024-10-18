@@ -311,3 +311,55 @@ td img {
 img:hover {
     transform: scale(5);
 }
+
+@media (max-width: 1000px ) {
+
+    .sidebar {
+        display: none;
+    }
+    .main--content {
+        width: 100%;
+    }
+
+    .header--wrapper {
+        justify-content: space-between;
+    }
+
+    .user--info {
+        display: none;
+    }
+
+    .tabular--wrapper {
+        overflow-x: auto;
+    }
+    .table-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    thead, tbody, tfoot {
+        display: flex;
+        flex-direction: column;
+    }
+
+    th, td {
+        flex: 0 0 auto;
+    }
+
+    .sidebar-toggle-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 10px;
+        background-color: #71b7e6;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

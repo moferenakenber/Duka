@@ -126,6 +126,10 @@ use App\Models\User;
                     return view('test');
                 });
 
+        Route::get('/testcalendar', function () {
+            return view('testcalendar');
+        });
+
 
 
 

@@ -10,7 +10,7 @@
         <li>
             <a href="{{ route('userprofile') }}">
                 <i class='bx bxs-user-circle'></i>
-                <span>user profile</span>
+                <span>profile</span>
             </a>
         </li>
         <li>

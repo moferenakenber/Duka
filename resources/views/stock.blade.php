@@ -7,14 +7,8 @@
             <div class="header--title">
                 <h2>Stock</h2>
             </div>
-            <div class="user--info">
-                <div class="search--box">
-                    <i class='bx bx-search'></i>
-                    <input type="text" placeholder="search">
-                </div>
-                <!--user image-->
-            </div>
-            <a href="additempage" class="additem">+</a>
+
+
         </div>
     </div>
 

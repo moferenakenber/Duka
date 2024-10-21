@@ -8,9 +8,16 @@
 }
 body {
     display: flex;
+    flex-direction: column; /* Ensure children stack vertically */
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1; /* Take up the remaining height after the navbar */
+    height: 100%; /* Ensures it fills the remaining vertical space */
 }
 .sidebar {
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
     bottom: 0;
@@ -36,7 +43,7 @@ body {
 }
 .menu li {
     padding: 1rem;
-    margin: 8px 8;
+    margin: 8px 8px;
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
 }

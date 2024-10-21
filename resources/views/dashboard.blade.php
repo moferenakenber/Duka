@@ -2,6 +2,7 @@
 
 @section('content')
 
+    {{--
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
@@ -14,7 +15,7 @@
                 </div>
                 <!--user image-->
             </div>
-        </div>
+        </div>--}}
         <div class="coming-soon">
             <h1>Coming Soon</h1>
             <p>Stay tuned! We're launching something amazing.</p>
@@ -48,7 +49,7 @@
                 startCountdown(countdownTime, display);
             };
         </script>
-    </div>
+{{--</div>--}}
 
 
 @endsection

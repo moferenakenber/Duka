@@ -1,6 +1,5 @@
 <!-- Sidebar -->
 <div class="sidebar">
-    <div class="logo"></div>
     <ul class="menu">
         <li>
             <a href="/dashboard">

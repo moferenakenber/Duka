@@ -8,7 +8,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div class="container">
+            <div class="container-fluid">
                 <a href="/dashboard" class="navbar-brand">YS</a>
 
                 <button class="button navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -18,7 +18,8 @@
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="/dashboard" class="nav-link">Dashboard</a>
+                            {{-- aria-current="page" is not working for some reason, it was supposed to highlight the page the user was on. --}}
+                            <a href="/dashboard" class="nav-link" aria-current="page">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a href="/customers" class="nav-link">Customers</a>

@@ -2,8 +2,8 @@
 <div class="sidebar">
     <div class="logo"></div>
     <ul class="menu">
-        <li class="active">
-            <a href="dashboard">
+        <li>
+            <a href="/dashboard">
                 <i class='bx bxs-dashboard'></i>
                 <span>Dashboard</span>
             </a>
@@ -15,50 +15,62 @@
             </a>
         </li>
         <li>
-            <a href="usermanagment">
+            <a href="/usermanagment">
                 <i class='bx bxs-user-detail'></i>
                 <span>user managment</span>
             </a>
         </li>
         <li>
-            <a href="customers">
+            <a href="/customers">
                 <i class='bx bxs-user-account'></i>
                 <span>Customers</span>
             </a>
         </li>
         <li>
-            <a href="items">
+            <a href="/items">
                 <i class='bx bxs-dashboard'></i>
                 <span>Items</span>
             </a>
         </li>
         <li>
-            <a href="carts">
+            <a href="/stock">
+                <i class='bx bxs-dashboard'></i>
+                <span>Stock</span>
+            </a>
+        </li>
+        <li>
+            <a href="/carts">
                 <i class='bx bx-cart'></i>
                 <span>Carts</span>
             </a>
         </li>
         <li>
-            <a href="sales">
+            <a href="/sales">
                 <i class='bx bxs-objects-vertical-bottom'></i>
-                <span>Sale</span>
+                <span>Sales</span>
             </a>
         </li>
         <li>
-            <a href="tasks">
+            <a href="/purchases">
+                <i class='bx bxs-objects-vertical-bottom'></i>
+                <span>Purchases</span>
+            </a>
+        </li>
+        <li>
+            <a href="/tasks">
                 <i class='bx bx-task'></i>
-                <span>Task</span>
+                <span>Tasks</span>
             </a>
         </li>
         <li>
-            <a href="calander">
+            <a href="/calendar">
                 <i class='bx bxs-dashboard'></i>
-                <span>Calander</span>
+                <span>Calendar</span>
             </a>
         </li>
 
         <li>
-            <a href="logout" class="logout">
+            <a href="/logout" class="logout">
                 <i class='bx bx-log-out'></i>
                 <span>Logout</span>
             </a>

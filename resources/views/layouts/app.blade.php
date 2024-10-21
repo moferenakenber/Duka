@@ -9,6 +9,8 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @vite('resources/css/dashboard.css')
 
+
+
         <script>
             const sidebar = document.querySelector('.sidebar');
             const sidebarToggleButton = document.querySelector('.sidebar-toggle-button');

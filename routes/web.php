@@ -69,6 +69,10 @@ use App\Models\User;
 
         Route::post('/items', [ItemsController::class, 'store']);
 
+        Route::get('/stock', function () {
+            return view('stock');
+        })->name('stock');
+
         Route::get('/carts', function () {
             return view('carts');
             })->name('carts');
@@ -77,9 +81,13 @@ use App\Models\User;
             return view('sales');
             })->name('sales');
 
-        Route::get('/calander', function () {
-            return view('calander');
-            })->name('calander');
+        Route::get('/purchases', function () {
+            return view('purchases');
+        })->name('purchases');
+
+        Route::get('/calendar', function () {
+            return view('calendar');
+            })->name('calendar');
 
         Route::get('/tasks', function () {
             return view('tasks');
@@ -109,6 +117,14 @@ use App\Models\User;
             return view('dashboard');
             });
 
+        Route::get('/dashboardtest', function () {
+            return view('dashboard');
+        })->name('dashboardtest');
+
+
+        Route::get('/test', function () {
+                    return view('test');
+                });
 
 
 
@@ -158,7 +174,7 @@ use App\Models\User;
 
 
 
-    //Route::get('/alert', Alert::class);
+//Route::get('/alert', Alert::class);
 
 
     /*

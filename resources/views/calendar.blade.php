@@ -5,7 +5,7 @@
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <h2>Calander</h2>
+                <h2>Calendar</h2>
             </div>
             <div class="user--info">
                 <div class="search--box">

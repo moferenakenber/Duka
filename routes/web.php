@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SessionsController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Dashboard;
 use App\Models\User;
 //use App\View\Components\Alert;
 //use App\View\Components\report;
+use App\Http\Controllers\TaskController;
 
 
 
@@ -88,10 +90,8 @@ use App\Models\User;
         Route::get('/calendar', function () {
             return view('calendar');
             })->name('calendar');
-
-        Route::get('/tasks', function () {
-            return view('tasks');
-            })->name('tasks');
+        Route::resource('/projects', ProjectController::class);
+        Route::resource('/tasks', TaskController::class);
 
 
 

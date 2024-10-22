@@ -56,6 +56,12 @@
             </a>
         </li>
         <li>
+            <a href="/projects">
+                <i class='bx bx-task'></i>
+                <span>Projects</span>
+            </a>
+        </li>
+        <li>
             <a href="/tasks">
                 <i class='bx bx-task'></i>
                 <span>Tasks</span>

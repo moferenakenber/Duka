@@ -31,6 +31,9 @@
                     <a href="/purchases" class="nav-link">Purchases</a>
                 </li>
                 <li class="nav-item">
+                    <a href="/projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
                     <a href="/tasks" class="nav-link">Tasks</a>
                 </li>
                 <li class="nav-item">

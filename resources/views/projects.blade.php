@@ -5,40 +5,52 @@
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <h2>Tasks</h2>
+                <h2>Projects</h2>
             </div>
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownFormButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Add Task
+                Add Project
             </button>
             <ul class="dropdown-menu p-4" aria-labelledby="dropdownFormButton">
                 <li>
                     <form>
                         @csrf
 
-                        <!-- Task Name -->
+                        <!-- Project Name -->
                         <div class="mb-3">
-                            <label for="Task Name" class="form-label">Task Name</label>
-                            <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Enter task name" required>
+                            <label for="Task Name" class="form-label">Project Name</label>
+                            <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Enter project name" required>
                         </div>
 
-                        <!-- Task Description -->
+                        <!-- Project Description -->
                         <div class="mb-3">
-                            <label for="description" class="form-label">Task Description</label>
-                            <textarea rows="5" cols="30" class="form-control" id="description" name="description" placeholder="Enter task description" required></textarea>
+                            <label for="description" class="form-label">Project Description</label>
+                            <textarea rows="5" cols="30" class="form-control" id="description" name="description" placeholder="Enter project description" required></textarea>
                         </div>
 
-                        <!-- Project -->
+                        <!-- Task Included in Project -->
                         <div class="mb-3">
-                            <label for="project" class="form-label">Project</label>
-                            <select class="form-select" id="project" name="project" required>
-                                <option value="" disabled selected>Select a project</option> <!-- Placeholder option -->
-                                <option value="Project A">project A</option>
-                                <option value="Project B">project B</option>
-                                <option value="Project C">project C</option>
-                                <option value="Project D">project D</option>
-                                <option value="Project E">project E</option>
-                                <!-- Add more customers as needed -->
-                            </select>
+                            <label for="role" class="form-label">Tasks Included in Project</label>
+                            <br>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="Admin" id="Admin">
+                                <label class="form-check-label" for="flexCheckDefault">Task A</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="Employee" id="Employee" checked>
+                                <label class="form-check-label" for="flexCheckChecked">Task B</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="purchaser" id="purchaser">
+                                <label class="form-check-label" for="flexCheckDefault">Task C</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="Employee" id="marketing">
+                                <label class="form-check-label" for="flexCheckChecked">Task D</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="sales" id="marketing">
+                                <label class="form-check-label" for="flexCheckChecked">Task E</label>
+                            </div>
                         </div>
 
                         <!-- Start Date -->
@@ -92,15 +104,30 @@
                             </select>
                         </div>
 
-                        <!-- Assignee -->
+                        <!-- Assignee Included in Project -->
                         <div class="mb-3">
-                            <label for="assignee" class="form-label">Assignee</label>
-                            <select class="form-control" id="assignee" name="assignee" required>
-                                <option selected disabled>Select Assignee</option>
-                                <option value="employee1">Employee 1</option>
-                                <option value="employee2">Employee 2</option>
-                                <!-- Add more employees -->
-                            </select>
+                            <label for="role" class="form-label">Assignee Included in Project</label>
+                            <br>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="Admin" id="Admin">
+                                <label class="form-check-label" for="flexCheckDefault">Employee A</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="Employee" id="employee" checked>
+                                <label class="form-check-label" for="flexCheckChecked">Employee B</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="purchaser" id="purchaser">
+                                <label class="form-check-label" for="flexCheckDefault">Employee C</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="Employee" id="marketing">
+                                <label class="form-check-label" for="flexCheckChecked">Employee D</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="sales" id="marketing">
+                                <label class="form-check-label" for="flexCheckChecked">Employee E</label>
+                            </div>
                         </div>
 
                         <!-- Status -->
@@ -117,9 +144,9 @@
 
                         <!-- Task Type -->
                         <div class="mb-3">
-                            <label for="taskType" class="form-label">Task Type</label>
-                            <select class="form-control" id="taskType" name="taskType" required>
-                                <option selected disabled>Select Task Type</option>
+                            <label for="taskType" class="form-label">Project Type</label>
+                            <select class="form-control" id="projectType" name="projectType" required>
+                                <option selected disabled>Select Project Type</option>
                                 <option value="development">Development</option>
                                 <option value="design">Design</option>
                                 <option value="upgrade">Upgrade</option>
@@ -149,11 +176,11 @@
 
                         <!-- Task Creator -->
                         <div class="mb-3">
-                            <label for="taskCreator" class="form-label">Task Creator</label>
-                            <input type="text" class="form-control" id="taskCreator" name="taskCreator" readonly value="{{--{{ $username }}--}}Current User">
+                            <label for="taskCreator" class="form-label">Project Creator</label>
+                            <input type="text" class="form-control" id="projectCreator" name="projectCreator" readonly value="{{--{{ $username }}--}}Current User">
                         </div>
 
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success">Create</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="dropdown">Close</button>
                     </form>
                 </li>

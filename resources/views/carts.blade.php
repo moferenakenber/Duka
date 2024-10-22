@@ -15,7 +15,7 @@
                     <form>
                         <div class="mb-3">
                             <label for="customer" class="form-label">Customer</label>
-                            <select class="form-select" id="customer" required>
+                            <select class="form-select" id="customer" name="customer" required>
                                 <option value="" disabled selected>Select a customer</option> <!-- Placeholder option -->
                                 <option value="Customer A">Customer A</option>
                                 <option value="Customer B">Customer B</option>

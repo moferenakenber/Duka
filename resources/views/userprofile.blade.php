@@ -33,16 +33,20 @@
                                 <label class="form-check-label" for="flexCheckChecked">Employee without any labels</label>
                             </div>
                             <div class="form-check form-check-inline mb-3">
-                                <input class="form-check-input" type="checkbox" value="purchaser" id="purchaser">
+                                <input class="form-check-input" type="checkbox" value="purchaser" id="purchaser" name="purchaser">
                                 <label class="form-check-label" for="flexCheckDefault">Purchaser</label>
                             </div>
                             <div class="form-check form-check-inline mb-3">
-                                <input class="form-check-input" type="checkbox" value="Employee" id="marketing">
+                                <input class="form-check-input" type="checkbox" value="Employee" id="marketing" name="marketing">
                                 <label class="form-check-label" for="flexCheckChecked">Marketing</label>
                             </div>
                             <div class="form-check form-check-inline mb-3">
-                                <input class="form-check-input" type="checkbox" value="sales" id="marketing">
+                                <input class="form-check-input" type="checkbox" value="sales" id="sales" name="sales">
                                 <label class="form-check-label" for="flexCheckChecked">Sales</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-3">
+                                <input class="form-check-input" type="checkbox" value="logistics" id="logistics" name="logistics">
+                                <label class="form-check-label" for="flexCheckChecked">Logistics</label>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -59,7 +63,6 @@
                 </li>
             </ul>
         </div>
-
     </div>
 
 @endsection

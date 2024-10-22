@@ -1,0 +1,18 @@
+/* Custom styles for the sidebar */
+#wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar-wrapper {
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}

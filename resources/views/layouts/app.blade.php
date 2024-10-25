@@ -13,8 +13,11 @@
         <script>
             const sidebar = document.querySelector('.sidebar');
             const sidebarToggleButton = document.querySelector('.sidebar-toggle-button');
+            const mainContent = document.querySelector('.main--content'); // Select the main content
+
             sidebarToggleButton.addEventListener('click', () => {
-                sidebar.classList.toggle('sidebar-visible');
+                sidebar.classList.toggle('sidebar-hidden'); // Toggle the hidden class on the sidebar
+                mainContent.classList.toggle('sidebar-hidden'); // Toggle the hidden class on the main content
             });
         </script>
     </head>

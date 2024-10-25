@@ -34,10 +34,10 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Image</th>
-                            <th>Description</th>
-                            <th>category</th>
-                            <th>Packaging Selling Options</th>
+                 {{--       <th>Image</th>         --}}
+{{--                            <th>Description</th>--}}
+{{--                            <th>category</th>--}}
+                            <th>Selling Options</th>
                             <th>Price</th>
                             <th>Status</th>
                             <th>Stock</th>
@@ -47,9 +47,9 @@
                         @foreach($items as $item)
                             <tr>
                                 <td>{{$item->name}}</td>
-                                <td> <img src="{{ asset('img/A4paper.jpeg') }}" alt="paper img"></td>
-                                <td>{{$item->description}}</td>
-                                <td>{{$item->category}}</td>
+                 {{--           <td> <img src="{{ asset('img/A4paper.jpeg') }}" alt="paper img"></td>         --}}
+                 {{--           <td>{{$item->description}}</td>       --}}
+{{--                                <td>{{$item->category}}</td>--}}
                                 <td>{{implode(', ', json_decode($item->option))}}</td>
                                 <td>{{$item->price}}</td>
                                 <td>{{$item->status}}</td>

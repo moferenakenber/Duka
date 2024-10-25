@@ -16,7 +16,7 @@
         <li>
             <a href="/usermanagment">
                 <i class='bx bxs-user-detail'></i>
-                <span>user managment</span>
+                <span>user management</span>
             </a>
         </li>
         <li>

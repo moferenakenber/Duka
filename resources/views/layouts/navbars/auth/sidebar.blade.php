@@ -7,6 +7,7 @@
                 <span>Dashboard</span>
             </a>
         </li>
+        <hr style="border: none; height: 1px; margin-top: 1px; margin-bottom: 1px; background-color: #71b7e6; width: 80%;">
         <li>
             <a href="{{ route('userprofile') }}">
                 <i class='bx bxs-user-circle'></i>
@@ -19,6 +20,7 @@
                 <span>user management</span>
             </a>
         </li>
+        <hr style="border: none; height: 1px; margin-top: 1px; margin-bottom: 1px; background-color: #71b7e6; width: 80%;">
         <li>
             <a href="/customers">
                 <i class='bx bxs-user-account'></i>
@@ -73,7 +75,7 @@
                 <span>Calendar</span>
             </a>
         </li>
-
+        <hr style="border: none; height: 1px; margin-top: 1px; margin-bottom: 1px; background-color: #71b7e6;; width: 80%;">
         <li>
             <a href="/logout" class="logout">
                 <i class='bx bx-log-out'></i>

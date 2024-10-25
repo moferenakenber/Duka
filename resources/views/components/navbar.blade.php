@@ -74,25 +74,28 @@
 </nav>
 
 <!-- Off-Canvas Sidebar -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDuka" aria-labelledby="offcanvasDukaLabel">
+<div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDuka" aria-labelledby="offcanvasDukaLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasDukaLabel">Sidebar</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <ul class="list-unstyled">
-            <li><a href="/dashboard" class="text-dark">Dashboard</a></li>
-            <li><a href="/userprofile" class="text-dark">User Profile</a></li>
-            <li><a href="/usermanagement" class="text-dark">User Management</a></li>
-            <li><a href="/customers" class="text-dark">Customers</a></li>
-            <li><a href="/items" class="text-dark">Items</a></li>
-            <li><a href="/stock" class="text-dark">Stock</a></li>
-            <li><a href="/carts" class="text-dark">Carts</a></li>
-            <li><a href="/sales" class="text-dark">Sales</a></li>
-            <li><a href="/purchases" class="text-dark">Purchases</a></li>
-            <li><a href="/projects" class="text-dark">Projects</a></li>
-            <li><a href="/tasks" class="text-dark">Tasks</a></li>
-            <li><a href="/calendar" class="text-dark">Calendar</a></li>
+            <hr>
+            <li><a href="/dashboard" class="text-white">Dashboard</a></li>
+            <hr>
+            <li><a href="/userprofile" class="text-white">User Profile</a></li>
+            <li><a href="/usermanagment" class="text-white">User Management</a></li>
+            <hr>
+            <li><a href="/customers" class="text-white">Customers</a></li>
+            <li><a href="/items" class="text-white">Items</a></li>
+            <li><a href="/stock" class="text-white">Stock</a></li>
+            <li><a href="/carts" class="text-white">Carts</a></li>
+            <li><a href="/sales" class="text-white">Sales</a></li>
+            <li><a href="/purchases" class="text-white">Purchases</a></li>
+            <li><a href="/projects" class="text-white">Projects</a></li>
+            <li><a href="/tasks" class="text-white">Tasks</a></li>
+            <li><a href="/calendar" class="text-white">Calendar</a></li>
         </ul>
     </div>
 </div>

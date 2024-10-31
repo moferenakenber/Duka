@@ -47,8 +47,8 @@
 {{--                    <td>{{implode(', ', json_decode($item->pacoption))}}</td>--}}
                     {{--            <td>{{$item->availablecolors}}</td>--}}
                     <td>Category</td>
-{{--                    <td>Selling Options</td>--}}
-{{--                    <td>Available Colors</td>--}}
+                <td>Selling Options</td>
+                   <td>Available Colors</td>
                     <td>{{$item->price}}</td>
                     <td>{{$item->status}}</td>
                     <td>{{$item->stock}}</td>

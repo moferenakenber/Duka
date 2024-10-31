@@ -3,15 +3,13 @@
 
 @section('auth')
 
-
-    {{--@if (\Request::is('userprofile')).  --}}
-    @include('layouts.navbars.auth.sidebar')
+        @include('layouts.navbars.auth.navbar')
+        @include('layouts.navbars.auth.sidebar')
         @yield('content')
-    {{--
 
-     @include('layouts.footers.auth.footer')
-    @endif
-    --}}
+                                                      {{--
+        @include('layouts.footers.auth.footer')
+                                                     --}}
 
 @endsection
 

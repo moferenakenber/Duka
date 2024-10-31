@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('category');
-            $table->json('option');
+            $table->json('catoption');
+            $table->json('pacoption');
             $table->decimal('price', 8, 2);
             $table->string('status')->default('available');
             $table->decimal('stock')->default('0');
+            $table->string('image')->default('not available');
+            $table->decimal('piecesinapacket', 8,2 );
+            $table->decimal('packetsinacartoon', 8, 2);
             $table->timestamps();
         });
     }

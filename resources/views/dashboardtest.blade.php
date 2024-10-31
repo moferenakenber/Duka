@@ -1,4 +1,4 @@
-@extends('layouts.user_type.dashboard')
+@extends('layouts.user_type.guest')
 
 @section('content')
 
@@ -49,6 +49,5 @@
             };
         </script>
     </div>
-
 
 @endsection

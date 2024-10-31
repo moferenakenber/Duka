@@ -9,6 +9,7 @@
        {{--<link rel="stylesheet" href="css/dashboard.css">--}}
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @vite('resources/css/dashboard.css')
+        @vite('resources/css/addproduct.css')
        {{-- script added by mili to make the sidebar responsive --}}
         <script>
             const sidebar = document.querySelector('.sidebar');
@@ -24,15 +25,18 @@
 
     <body>
      <header>
+         @yield('')
+                            {{--
          <x-navbar />
+                            --}}
      </header>
      <div class="content-wrapper">
         @yield('auth')
      </div>
-     {{--
-           <x-sidebar />
-           <x-dashboard />
-     --}}
+                                {{--
+        <x-sidebar />
+        <x-dashboard />
+                             --}}
 
     </body>
 </html>

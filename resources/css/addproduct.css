@@ -1,5 +1,5 @@
-body {
-    display: flex;
+#createcontainer {
+    /*display: flex;*/
     height: 100vh;
     justify-content: center;
     flex-direction: column;
@@ -9,7 +9,7 @@ body {
 
 }
 
-.container {
+#createcontainerchild {
     background: #fff;
     padding: 15px 20px;
     border-radius: 20px;

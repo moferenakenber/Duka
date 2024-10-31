@@ -1,8 +1,7 @@
-@extends('layouts.dashboardapp')
+@extends('layouts.guestapp')
 
 
 @section('auth')
-
 
     {{--@if (\Request::is('userprofile')).  --}}
     @include('layouts.navbars.auth.sidebar')

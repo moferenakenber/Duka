@@ -12,10 +12,15 @@ class Item extends Model
     protected $fillable = [
         'name',
         'description',
-        'category',
-        'option',
+        'catoption',
+        'pacoption',
+       // 'sellingoption',
+       // 'availablecolors',
         'price',
         'status',
         'stock',
+        'image',
+        'piecesinapacket',
+        'packetsinacartoon',
     ];
 }

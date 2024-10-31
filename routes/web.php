@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -65,11 +66,11 @@ use App\Http\Controllers\TaskController;
             return view('items');
             })->name('items');
 
-        Route::get('/additempage',function () {
-            return view('additempage');
-        });
+//        Route::post('/items', [ItemsController::class, 'store']);
 
-        Route::post('/items', [ItemsController::class, 'store']);
+        Route::resource('item', ItemController::class);
+
+
 
         Route::get('/stock', function () {
             return view('stock');

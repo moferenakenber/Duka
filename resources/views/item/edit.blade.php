@@ -1,11 +1,19 @@
+<!-- resources/views/items/edit.blade.php -->
+
+<!-- resources/views/items/show.blade.php -->
+
 @extends('layouts.user_type.auth')
 
 @section('content')
 
+    {{--    @php--}}
+    {{--        use App\Models\Item;--}}
+    {{--        $items = Item::all();--}}
+    {{--    @endphp--}}
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
-                <h2>Profile</h2>
+                <h2>{{ $item->name }}</h2>
             </div>
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownFormButton" data-bs-toggle="dropdown" aria-expanded="false">
                 Edit Profile
@@ -63,21 +71,14 @@
                 </li>
             </ul>
         </div>
-        <div class="container-fluid">
-            <!-- Grid system -->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-6">
-                        Column
-                    </div>
-                    <div class="col">
-                        Column
-                    </div>
-                </div>
-            </div>
 
-
-        </div>
+        <h1>{{ $item->name }}</h1>
+        <p>{{implode(', ', json_decode($item->catoption))}}</p>
+        <p>{{$item->price}}</p>
+        <p>{{$item->category}}</p>
+        <p>{{ $item->description}}</p>
+        <p>{{$item->status}}</p>
+        <p>{{$item->stock}}</p>
+        <a href="{{ route('item.index') }}">Back to list</a>
     </div>
-
 @endsection

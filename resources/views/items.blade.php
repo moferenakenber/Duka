@@ -20,7 +20,7 @@
 
     @php
         use App\Models\Item;
-        $items = Item::all();
+        $item = Item::all();
     @endphp
 
     <div class="container">
@@ -39,7 +39,7 @@
             </tr>
             </thead>
             <tbody class="table-group-divider">
-            @foreach($items as $item)
+            @foreach($item as $item)
                 <tr>
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->name}}</td>

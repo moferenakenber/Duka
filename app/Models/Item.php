@@ -23,4 +23,10 @@ class Item extends Model
         'piecesinapacket',
         'packetsinacartoon',
     ];
+
+    // Define the one-to-many relationship with images
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }

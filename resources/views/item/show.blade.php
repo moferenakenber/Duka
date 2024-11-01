@@ -11,7 +11,7 @@
 <div class="main--content">
     <div class="header--wrapper">
         <div class="header--title">
-            <h2>{{ $item->name }}</h2>
+            <h2>{{$item->name}}</h2>
         </div>
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownFormButton" data-bs-toggle="dropdown" aria-expanded="false">
             Edit Profile
@@ -69,22 +69,110 @@
             </li>
         </ul>
     </div>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ $item->name }}</h5>
-            <p class="card-text">{{ $item->description }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+    <br>
+
+{{--    <!-- Card View -->--}}
+{{--    <div class="card" style="width: 18rem;">--}}
+{{--        @if($item->images->isNotEmpty())--}}
+{{--            <img src="{{ asset('storage/' . $item->images->first()->path) }}" class="card-img-top" alt="Item Image">--}}
+{{--        @else--}}
+{{--            <img src="{{ asset('path/to/default/image.jpg') }}" class="card-img-top" alt="Default Item Image">--}}
+{{--        @endif--}}
+
+{{--        <div class="card-body">--}}
+{{--            <h5 class="card-title">{{ $item->name }}</h5>--}}
+{{--            <p class="card-text">{{ $item->description }}</p>--}}
+{{--            <a href="#" class="btn btn-primary">Add to Cart</a>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+{{--    <!--Description-->--}}
+{{--    <h2>{{$item->describtion}}</h2>--}}
+{{--    <!--catoption-->--}}
+{{--    <h2>{{$item->catoption}}</h2>--}}
+{{--    <!--pacoption-->--}}
+{{--    <h2>{{$item->pacoption}}</h2>--}}
+{{--    <!--sellingoption-->--}}
+{{--    <h2>{{$item->sellingoption}}</h2>--}}
+{{--    <!--availablecolors-->--}}
+{{--    <h2>{{$item->availablecolors}}</h2>--}}
+{{--    <!--price-->--}}
+{{--    <h2>{{$item->price}}</h2>--}}
+{{--    <!--status-->--}}
+{{--    <h2>{{$item->status}}</h2>--}}
+{{--    <!--stock-->--}}
+{{--    <h2>{{$item->stock}}</h2>--}}
+{{--    <!--piecesinapacket-->--}}
+{{--    <h2>{{$item->piecesinapacket}}</h2>--}}
+{{--    <!--packetsinacartoon-->--}}
+{{--    <h2>{{$item->packetsinacartoon}}</h2>--}}
+    <div class="container mt-5">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('item.index') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $item->name }}</li>
+            </ol>
+        </nav>
+        <!-- End of Breadcrumb Navigation -->
+
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title">{{ $item->name }}</h2>
+            </div>
+
+            <!-- Carousel for Images -->
+            <div id="itemCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @if($item->images->isNotEmpty())
+                        @foreach($item->images as $index => $image)
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img src="{{ asset('storage/' . $image->path) }}" class="d-block w-100" alt="Item Image {{ $index + 1 }}">
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="carousel-item active">
+                            <img src="{{ asset('images/default.jpg') }}" class="d-block w-100" alt="Default Item Image">
+                        </div>
+                    @endif
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#itemCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#itemCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- End of Carousel -->
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>Description:</strong> {{ $item->description }}</p>
+                        <p class="card-text"><strong>Categories:</strong> {{ implode(', ', json_decode($item->catoption)) }}</p>
+                        <p class="card-text"><strong>Selling Options:</strong> {{ implode(', ', json_decode($item->pacoption)) }}</p>
+                        <p class="card-text"><strong>Status:</strong> {{ ucfirst($item->status) }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>Price:</strong> ${{ number_format($item->price, 2) }}</p>
+                        <p class="card-text"><strong>Stock:</strong> {{ $item->stock }}</p>
+                        <p class="card-text"><strong>Pieces in a Packet:</strong> {{ $item->piecesinapacket }}</p>
+                        <p class="card-text"><strong>Packets in a Cartoon:</strong> {{ $item->packetsinacartoon }}</p>
+                    </div>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <form action="{{--{{ route('cart.add', $item->id) }}--}}#" method="POST" class="mt-4">
+                    @csrf
+                    <button type="submit" class="btn btn-success btn-lg">Add to Cart</button>
+                </form>
+                <!-- End of Add to Cart Button -->
+            </div>
         </div>
     </div>
 
-    <h1>{{ $item->name }}</h1>
-    <p>{{implode(', ', json_decode($item->catoption))}}</p>
-    <p>{{$item->price}}</p>
-    <p>{{$item->category}}</p>
-    <p>{{ $item->description }}</p>
-    <p>{{$item->status}}</p>
-    <p>{{$item->stock}}</p>
-    <a href="{{ route('item.index') }}">Back to list</a>
+
 </div>
 @endsection

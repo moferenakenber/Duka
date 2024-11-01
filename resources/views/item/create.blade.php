@@ -104,10 +104,12 @@
 
     <div class="container">
         <div class="createcontainerchild">
-        <h2>Description</h2>
+        <h2>Add item</h2>
             <div class="product-description">
-                <form action="/item" method="POST">
+                <form action="/item" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                    <!-- Product Name Section -->
                     <h2>Product Name</h2>
                     <div class="product-category">
                         <label for="name">Product Name</label>
@@ -118,26 +120,30 @@
                         <br>
                         <textarea rows="5" cols="30" name="description" placeholder="enter product description"></textarea>
                     </div>
+                    <br>
+
+                    <!-- Category Section -->
                     <h2>Category</h2>
                     <div class="product-category">
-
                         <label for="Category">product-category</label>
                         <br>
-                        {{--                            <select name="category">--}}
-                        {{--                                <option value="office">office</option>--}}
-                        {{--                                <option value="school">school</option>--}}
-                        {{--                                <option value="kids">Kids</option>--}}
-                        {{--                                <option value="gift">Gift</option>--}}
-                        {{--                                <option value="gov">Government</option>--}}
+                {{--    <select name="category">                                          --}}
+                {{--    <option value="office">office</option>                            --}}
+                {{--    <option value="school">school</option>                            --}}
+                {{--    <option value="kids">Kids</option>                                --}}
+                {{--    <option value="gift">Gift</option>                                --}}
+                {{--    <option value="gov">Government</option>                           --}}
                         <input type="checkbox" name="catoption[]" value="office" >office<br>
                         <input type="checkbox" name="catoption[]" value="school" >school<br>
                         <input type="checkbox" name="catoption[]" value="cartoon" >Kids<br>
                         <input type="checkbox" name="catoption[]" value="Kids" >Gift<br>
                         <input type="checkbox" name="catoption[]" value="government" >Government<br>
-                        <input type="checkbox" name="catoption[]" value="cartoon" >Cartoon<br>
 
-                        {{--                            </select>--}}
+                {{--                            </select>                                  --}}
                     </div>
+                    <br>
+
+                    <!-- Packaging Selling Options Section -->
                     <h2>Packaging Selling Options </h2>
                     <div class="selling-type">
                         {{-- By adding [] to the name the result of the input will be sent as an
@@ -148,7 +154,10 @@
                         <input type="checkbox" name="pacoption[]" value="cartoon" >Cartoon<br>
 
                     </div>
-                    <h2>pricing</h2>
+                    <br>
+
+                    <!-- pricing Section -->
+                    <h2>Pricing</h2>
                     <div class="pricing">
 
                         <label>Price</label><br>
@@ -157,6 +166,7 @@
                     </div>
                     <br>
 
+                    <!-- Status Section -->
                     <h2>Status</h2>
                     <div class="product-category">
 
@@ -167,7 +177,9 @@
                             <option value="Not Available">Not Available</option>
                         </select>
                     </div>
+                    <br>
 
+                    <!-- Stock Section -->
                     <h2>Stock</h2>
                     <div class="pricing">
 
@@ -175,44 +187,48 @@
                         <input type="number" name="stock" min="0">
 
                     </div>
+                    <br>
 
-
-                        <div class="mb-3">
-                            <h2>Packaging Standard</h2>
-                        </div>
-
-                        <!-- Packet Section -->
-                        <div class="row mb-3 align-items-center">
-                            <div class="col-auto">
-                                <label for="packetHolds" class="form-label">1 Packet holds</label>
-                            </div>
-                            <div class="col-auto">
-                                    <input type="number" name="piecesinapacket" min="0" max="1000">
-                            </div>
-
-                            <div class="col-auto">
-                                <label class="form-label">pieces</label>
-                            </div>
-                        </div>
-
-                        <!-- Carton Section -->
-                        <div class="row mb-3 align-items-center">
-                            <div class="col-auto">
-                                <label for="cartonHolds" class="form-label">1 Carton holds</label>
-                            </div>
-                            <div class="col-auto">
-                                <input type="number" name="packetsinacartoon" min="0" max="1000">
-                            </div>
-                            <div class="col-auto">
-                                <label class="form-label">packets</label>
-                            </div>
-                        </div>
-
-
-
+                    <!-- Packaging Standard Section -->
                     <div class="mb-3">
-                        <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        <h2>Packaging Standard</h2>
+                    </div>
+
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="packetHolds" class="form-label">1 Packet holds</label>
+                        </div>
+                        <div class="col-auto">
+                                <input type="number" name="piecesinapacket" min="0" max="1000">
+                        </div>
+
+                        <div class="col-auto">
+                            <label class="form-label">pieces</label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="cartonHolds" class="form-label">1 Carton holds</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" name="packetsinacartoon" min="0" max="1000">
+                        </div>
+                        <div class="col-auto">
+                            <label class="form-label">packets</label>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <!-- Upload Section -->
+                    <div class="mb-3">
+                        <h2>Upload</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFileMultiple" class="form-label">Upload Multiple images </label>
+                        <input class="form-control" type="file" name="images[]" id="formFileMultiple" multiple>
                     </div>
 
                     <div class="add-button">

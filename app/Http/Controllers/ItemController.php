@@ -50,6 +50,7 @@ class ItemController extends Controller
             'stock' => 'required|min:1',
             'piecesinapacket' => 'required|min:1',
             'packetsinacartoon' => 'required|min:1',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
 
         ]);
         /*
@@ -69,6 +70,16 @@ class ItemController extends Controller
             'packetsinacartoon' => $validatedItem['packetsinacartoon'],
         ]);
 
+        // Handle image uploads
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $filename = time() . '_' . $image->getClientOriginalName(); // Create a unique filename
+                $image->storeAs('uploads', $filename, 'public'); // Store in storage/app/public/uploads
+                // Optionally, you might want to save the image paths to the database associated with the item
+                // For example, you can push to an array, or save paths in a separate column if necessary
+                $item->images()->create(['path' => 'uploads/' . $filename]); // Assuming you have a relation set up for images
+            }
+        }
 
         return redirect()->route('item.index')->with('success', 'item registered successfully!');
     }

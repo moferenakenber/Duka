@@ -16,4 +16,15 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_login_pages_works(): void
+    {
+
+        $response = $this->post('/session', [
+            'email' => 'yhunetaw@gmail.com',
+            'password' => '12345',
+            ]);
+
+        $response->assertStatus('302');
+    }
 }

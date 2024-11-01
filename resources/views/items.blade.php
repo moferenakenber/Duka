@@ -39,7 +39,7 @@
             </tr>
             </thead>
             <tbody class="table-group-divider">
-            @foreach($item as $item)
+            @forelse($item as $item)
                 <tr>
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->name}}</td>
@@ -64,13 +64,15 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
                             </form>
-
-
-
                         </div>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="9" class="text-center">{{ __('No items found') }}</td>
+                </tr>
+            @endforelse
+
             </tbody>
         </table>
     </div>

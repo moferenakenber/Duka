@@ -164,10 +164,32 @@
                 </div>
 
                 <!-- Add to Cart Button -->
-                <form action="{{--{{ route('cart.add', $item->id) }}--}}#" method="POST" class="mt-4">
+                <form action="{{ route('carts.store') }}" method="POST" class="mt-4">
                     @csrf
+
+                    <div class="form-group">
+                        <label for="cart_id">Select Cart:</label>
+                        <select name="cart_id" id="cart_id" class="form-control">
+                            <option value="">-- Create a New Cart --</option>
+                            @foreach (auth()->user()->carts as $cart)
+                                <option value="{{ $cart->id }}">{{ $cart->cart_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="new_cart_name">New Cart Name:</label>
+                        <input type="text" name="new_cart_name" id="new_cart_name" class="form-control" placeholder="Enter new cart name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" value="1" min="1" class="form-control" required>
+                    </div>
+
                     <button type="submit" class="btn btn-success btn-lg">Add to Cart</button>
                 </form>
+
                 <!-- End of Add to Cart Button -->
             </div>
         </div>

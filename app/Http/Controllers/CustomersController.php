@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 //This single line generates the following routes:
 //
@@ -39,6 +40,13 @@ class CustomersController extends Controller
      */
     public function store(Request $request)
     {
+
+        if (!auth()->check()) {
+            return redirect()->route('login')->withErrors(['error' => 'You must be logged in to create a customer.']);
+        }Auth::user()->id;
+
+
+
         $request->validate([
             'customerFirstName' => 'required|string|max:255',
             'customerLastName' => 'required|string|max:255',
@@ -53,7 +61,7 @@ class CustomersController extends Controller
             'city' => $request->city,
             'customerEmail' => $request->customerEmail,
             'customerPhoneNo' => $request->customerPhoneNo,
-            'user_id' => auth()->id(),
+            'user_id' =>  auth()->id(),
         ]);
 
         return redirect()->route('customers.index')->with('success', 'Customer created successfully!');

@@ -77,10 +77,18 @@
         </li>
         <hr style="border: none; height: 1px; margin-top: 1px; margin-bottom: 1px; background-color: #71b7e6;; width: 80%;">
         <li>
-            <a href="/logout" class="logout">
+            <!-- Logout Link -->
+            <a href="#" onclick="event.preventDefault(); if(confirm('Are you sure you want to logout?')) document.getElementById('logout-form').submit();" class="logout">
                 <i class='bx bx-log-out'></i>
                 <span>Logout</span>
             </a>
+
+            <!-- Logout Form -->
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                @method('DELETE')
+            </form>
+
         </li>
     </ul>
 </div>

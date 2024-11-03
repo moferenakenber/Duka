@@ -1,15 +1,14 @@
 <?php
 
-        use App\Http\Controllers\{
-            CartController,
-            ItemController,
-            ItemsController,
-            ProjectController,
-            SessionsController,
-            UserController,
-            Dashboard,
-            TaskController
-        };
+use App\Http\Controllers\{CartController,
+    CustomersController,
+    ItemController,
+    ItemsController,
+    ProjectController,
+    SessionsController,
+    UserController,
+    Dashboard,
+    TaskController};
         use Illuminate\Support\Facades\Route;
         use Illuminate\Http\Request;
         use App\Models\User;
@@ -33,8 +32,6 @@
             Route::get('/login', function () {
                 return view('login');
             })->name('login');
-
-            # Session and User Management
 
             Route::post('/session', [SessionsController::class, 'store']);
 
@@ -64,6 +61,14 @@
 
         Route::middleware('auth')->group(function () {
 
+            # Session and User Management
+
+            Route::get('/test-auth', function () {
+                dd(auth()->user());
+            });
+
+            Route::delete('/session', [SessionsController::class, 'destroy'])->name('logout');
+
             # Dashboard and Profile
 
             Route::get('/dashboard', function () {
@@ -81,9 +86,11 @@
 
             # Customer and Item Management
 
-            Route::get('/customers', function () {
-                return view('customers');
-            })->name('customers');
+//            Route::get('/customers', function () {
+//                return view('customers');
+//            })->name('customers');
+
+            Route::resource('/customers', CustomersController::class);
 
             Route::get('/items', function () {
                 return view('items');

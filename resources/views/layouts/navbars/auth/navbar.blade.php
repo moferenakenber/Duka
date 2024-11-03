@@ -9,6 +9,14 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navmenu">
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <h4>Welcome, {{ auth()->user()->username }}!</h4>
+                </li>
+            </ul>
+
+            <h4>Welcome, {{ auth()->user()->username }}!</h4>
             <!--
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">

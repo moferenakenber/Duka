@@ -15,15 +15,19 @@
                 <h1>Register</h1>
             <div class="input-box">
                     <input type="text" name="fullname" placeholder="fullname" required>
+                <span class="text-danger">@error('fullname'){{$message}}@enderror</span>
             </div>
             <div class="input-box">
                 <input type="text" name="username" placeholder="username" required>
+                <span class="text-danger">@error('username'){{$message}}@enderror</span>
             </div>
             <div class="input-box">
                 <input type="email" name="email" placeholder="email" required>
+                <span class="text-danger">@error('email'){{$message}}@enderror</span>
             </div>
             <div class="input-box">
                 <input type="password" name="password" placeholder="password" required>
+                <span class="text-danger">@error('password'){{$message}}@enderror</span>
                 <i class='bx bx-lock-alt' ></i>
             </div>
                 <button type="submit">Register</button>

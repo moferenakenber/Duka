@@ -7,12 +7,22 @@ use App\Models\Item;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Http\Request;
 
+//This single line generates the following routes:
+//
+//GET /carts                → index method
+//GET /carts/create         → create method
+//POST /carts               → store method
+//GET /carts/{item}         → show method
+//GET /carts/{carts}/edit    → edit method
+//PUT/PATCH /carts/{carts}   → update method
+//DELETE /carts/{carts}      → destroy method
+
 class CartController extends Controller
 {
     // Display all carts for the authenticated user
     public function index()
     {
-        $carts = auth()->user()->carts()->with('cartItems.item')->get(); // Load carts with items
+        $carts = auth()->user()->carts()->with('cartItems')->get(); // Load carts with items
         return view('carts.index', compact('carts'));
     }
 
@@ -48,9 +58,11 @@ class CartController extends Controller
         }
 
         // Assuming you have a pivot table for cart items, add the item with the specified quantity
-        $cart->items()->attach($request->item_id, ['quantity' => $request->quantity]);
+        $cart->cartItems()->attach($request->item_id, ['quantity' => $request->quantity,
+                                                        'price' => $request->price,]);
 
-        return redirect()->route('carts.show', $cart->id)->with('success', 'Item added to cart successfully!');
+        return redirect()->route('item.index')->with('success', 'Cart created successfully.');
+        //return redirect()->route('carts.show', $cart->id)->with('success', 'Item added to cart successfully!');
     }
 
 
@@ -58,7 +70,7 @@ class CartController extends Controller
     public function show(Cart $cart)
     {
         $this->authorize('view', $cart); // Ensure user owns the cart
-        $cart->load('cartItems.item'); // Load related items for the cart
+        $cart->load('cartItems'); // Loads the related `Item` models via the `cartItems` relationship
         $items = Item::all(); // Get all items for dropdown
 
         return view('carts.show', compact('cart', 'items'));

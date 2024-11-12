@@ -163,24 +163,53 @@
                     </div>
                 </div>
 
-                <!-- Add to Cart Button -->
+                <!-- Add to Cart Form -->
                 <form action="{{ route('carts.store') }}" method="POST" class="mt-4">
                     @csrf
+                    <!-- item_id -->
+                    <input type="hidden" name="item_id" value="{{ $item->id }}">
+                    <input type="hidden" name="price" value="{{ $item->price }}">
 
+                    <!-- cart_id -->
                     <div class="form-group">
                         <label for="cart_id">Select Cart:</label>
                         <select name="cart_id" id="cart_id" class="form-control">
-                            <option value="">-- Create a New Cart --</option>
-                            @foreach (auth()->user()->carts as $cart)
+                            <option value="">-- Select existing Cart --</option>
+                            @foreach (auth()->user()->carts() as $cart)
                                 <option value="{{ $cart->id }}">{{ $cart->cart_name }}</option>
                             @endforeach
                         </select>
                     </div>
 
+{{--                    <div class="form-group">--}}
+{{--                        <label for="new_cart_name">New Cart Name:</label>--}}
+{{--                        <input type="text" name="new_cart_name" id="new_cart_name" class="form-control" placeholder="Enter new cart name" required>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="form-group">--}}
+{{--                        <label for="cart_id">Select Cart:</label>--}}
+{{--                        <select name="cart_id" id="cart_id" class="form-control">--}}
+{{--                            <option value="">-- Create a New Cart --</option>--}}
+{{--                            @foreach (auth()->user()->carts as $cart)--}}
+{{--                                <option value="{{ $cart->id }}">{{ $cart->cart_name }}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
+
+
+                    <!-- new_cart_name -->
                     <div class="form-group">
-                        <label for="new_cart_name">New Cart Name:</label>
-                        <input type="text" name="new_cart_name" id="new_cart_name" class="form-control" placeholder="Enter new cart name" required>
+                        <label for="customer_id">Create new Cart:</label>
+                        <select name="new_cart_name" id="customer_id" class="form-control">
+                            <option value="">-- Select a Customer to Create Cart for --</option>
+                            @foreach ($customers as $customer)
+                                <option value="{{ $customer->customerFirstName }}">{{ $customer->customerFirstName }} {{ $customer->customerLastName }}</option>
+                            @endforeach
+                        </select>
                     </div>
+
+                    <!-- Optionally, include a "Create a New Cart" section here -->
+                    <!-- (You can display this after the user selects a customer or through a modal) -->
 
                     <div class="form-group">
                         <label for="quantity">Quantity:</label>

@@ -35,7 +35,8 @@
                         <td>{{ $customer->city }}</td>
                         <td>{{ $customer->customerEmail }}</td>
                         <td>{{ $customer->customerPhoneNo }}</td>
-                        <td>{{ $customer->user->name }}</td>
+                        <td>{{ $customer->user->fullname }}</td>
+{{--                        <td>{{ optional($customer->user)->username }}--}}
                     </tr>
                 @endforeach
                 </tbody>

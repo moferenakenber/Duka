@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 //This single line generates the following routes:
 //
@@ -37,7 +39,7 @@ class CustomersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
         $request->validate([
             'customerFirstName' => 'required|string|max:255',
@@ -53,7 +55,8 @@ class CustomersController extends Controller
             'city' => $request->city,
             'customerEmail' => $request->customerEmail,
             'customerPhoneNo' => $request->customerPhoneNo,
-            'user_id' => auth()->id(),
+            'customerCreatedBy' => auth()->id(),
+            'user_id' => Auth::id(), // Get the currently authenticated user's ID
         ]);
 
         return redirect()->route('customers.index')->with('success', 'Customer created successfully!');

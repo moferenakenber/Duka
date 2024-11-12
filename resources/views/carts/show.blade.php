@@ -1,46 +1,62 @@
-@extends('layouts.user_type.auth')
-
-@section('content')
-
-    <div class="main--content">
-        <div class="header--wrapper">
-            <div class="header--title">
-                <h2>Carts</h2>
-            </div>
-        </div>
 
         @extends('layouts.user_type.auth')
 
         @section('content')
 
             <div class="main--content">
+
+                <!-- Tab Navbar -->
                 <div class="header--wrapper">
                     <div class="header--title">
                         <h2>Carts</h2>
                     </div>
+
+                    <!-- Create Customer Button -->
+{{--                    s--}}
                 </div>
 
+                <!-- Customer Table -->
                 <div class="container">
-                    <h1>Create a New Cart</h1>
-                    <form action="{{ route('carts.store') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="cart_name" class="form-label">Cart Name (Optional)</label>
-                            <input type="text" name="cart_name" id="cart_name" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Create Cart</button>
-                    </form>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Cart items</th>
+                            <th>Cart quantity</th>
+                            <th>Cart Action</th>
+                            <th>Cart Action</th>
+{{--                            <th>Created By</th>--}}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($cart as $carts)
+                            <tr>
+                                <td>{{ $cart->cart_name }}</td>
+                                <td>{{ $cart->cart_name }}</td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Delete</a></td>
+{{--                                <td>{{ $customer->user->fullname }}</td>--}}
+                                {{--                        <td>{{ optional($customer->user)->username }}--}}
+                            </tr>
+                        @endforeach
+                        <tr class="button">Sale</tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        @foreach($cart->items as $item)
+                            <li>{{ $item->name }} - {{ $item->quantity }}</li>
+                        @endforeach
+                    </ul>
+
                 </div>
-
             </div>
-
-            {{--    <x-countdown-timer />--}}
 
         @endsection
 
 
-    </div>
+
+
+{{--    </div>--}}
 
 
 
-@endsection
+{{--@endsection--}}

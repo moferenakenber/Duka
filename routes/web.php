@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\{CartController,
+    CartItemController,
     CustomersController,
     ItemController,
     ItemsController,
@@ -110,8 +111,10 @@ use App\Http\Controllers\{CartController,
             Route::post('/carts', [CartController::class, 'store'])->name('carts.store'); // Store a new cart
             Route::get('/carts/{cart}', [CartController::class, 'show'])->name('carts.show'); // Show single cart details
 
+
+            //Route::post('cartitems', [CartItemController::class, 'addItemToCart'])->name('cartitems.addItemToCart');
             // If you're adding items to a specific cart, this is a separate route
-            Route::post('/carts/{cart}/items', [CartController::class, 'addItem'])->name('carts.items.store'); // Add item to a specific cart
+            Route::post('/carts/{cart}/items', [CartController::class, 'addItem'])->name('cart.items.store'); // Add item to a specific cart
 
 
             # Additional Management Views

@@ -54,4 +54,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cart::class);
     }
+
+    // Define relationship to Customer (one-to-many, since one user can have many customers)
+    public function customers(): HasMany
+    {
+        return $this->hasMany(Customer::class);
+    }
 }

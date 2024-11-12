@@ -11,16 +11,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Cart extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'cart_name', 'status'];
+    protected $fillable = [
+        'user_id',
+        'cart_name',
+        'status'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function cartItems(): HasMany
+    public function cartItems()
     {
-        return $this->hasMany(CartItems::class);
+        return $this->belongsToMany(Item::class, 'cart_items')->withPivot('quantity');
     }
 
     public function createCart(Request $request)

@@ -12,7 +12,7 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <h4>Welcome, {{ auth()->user()->username }}!</h4>
+                    <h4 class="text-white">Welcome, {{ auth()->user()->username }}</h4>
                 </li>
             </ul>
 

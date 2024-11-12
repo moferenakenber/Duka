@@ -2,6 +2,7 @@
 // app/Http/Controllers/ItemController.php
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\View\View;
@@ -89,7 +90,8 @@ class ItemController extends Controller
     {
         // Retrieve the item by ID
         $item = Item::findOrFail($id);
-        return view('item.show', compact('item'));
+        $customers = Customer::all(); // Retrieves all customers
+        return view('item.show', compact('item', 'customers'));
     }
 
     // Show the form for editing the specified item

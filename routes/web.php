@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\{CartController,
-    CartItemController,
+use App\Http\Controllers\{Auth\LoginController,
+    Auth\RegisterController,
+    CartController,
     CustomersController,
     ItemController,
     ItemsController,
@@ -30,11 +31,28 @@ use App\Http\Controllers\{CartController,
                 return view('login');
             })->name('login');
 
-            Route::get('/login', function () {
-                return view('login');
-            })->name('login');
+//            Route::get('/login', function () {
+//                return view('login');
+//            })->name('login');
 
-            Route::post('/session', [SessionsController::class, 'store']);
+
+
+//            Route::post('/session', [SessionsController::class, 'store']);
+
+
+                        // Auth Routes
+            Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+            Route::post('/login', [LoginController::class, 'login']);
+            Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+            Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+            Route::post('/register', [RegisterController::class, 'register']);
+
+
+
+
+
+
 
             Route::get('/resetpassword', function () {
                 return view('resetpage');
@@ -60,7 +78,8 @@ use App\Http\Controllers\{CartController,
 
         # Authenticated Routes
 
-        Route::middleware('auth')->group(function () {
+// Protected Routes
+Route::group(['middleware' => 'auth'], function () {
 
             # Session and User Management
 
@@ -68,7 +87,7 @@ use App\Http\Controllers\{CartController,
                 dd(auth()->user());
             });
 
-            Route::delete('/session', [SessionsController::class, 'destroy'])->name('logout');
+//            Route::delete('/session', [SessionsController::class, 'destroy'])->name('logout');
 
             # Dashboard and Profile
 
@@ -87,9 +106,9 @@ use App\Http\Controllers\{CartController,
 
             # Customer and Item Management
 
-//            Route::get('/customers', function () {
-//                return view('customers');
-//            })->name('customers');
+            //            Route::get('/customers', function () {
+            //                return view('customers');
+            //            })->name('customers');
 
             Route::resource('/customers', CustomersController::class);
 
@@ -97,14 +116,14 @@ use App\Http\Controllers\{CartController,
                 return view('items');
             })->name('items');
 
-                Route::resource('item', ItemController::class);
+            Route::resource('item', ItemController::class);
 
-                    # Cart Management
-//
-//                    Route::get('/carts', [CartController::class, 'index'])->name('carts.index'); // View all carts
-//                    Route::get('/carts/create', [CartController::class, 'create'])->name('carts.create'); // Form to create a cart
-//                    Route::post('/carts', [CartController::class, 'store'])->name('carts.store'); // Store a new cart
-//                    Route::get('/carts/{cart}', [CartController::class, 'show'])->name('carts.show'); // Show single cart details
+            # Cart Management
+            //
+            //                    Route::get('/carts', [CartController::class, 'index'])->name('carts.index'); // View all carts
+            //                    Route::get('/carts/create', [CartController::class, 'create'])->name('carts.create'); // Form to create a cart
+            //                    Route::post('/carts', [CartController::class, 'store'])->name('carts.store'); // Store a new cart
+            //                    Route::get('/carts/{cart}', [CartController::class, 'show'])->name('carts.show'); // Show single cart details
 
             Route::get('/carts', [CartController::class, 'index'])->name('carts.index'); // View all carts
             Route::get('/carts/create', [CartController::class, 'create'])->name('carts.create'); // Form to create a cart
@@ -140,7 +159,6 @@ use App\Http\Controllers\{CartController,
             })->name('calendar');
 
 
-
             # Reports and Alerts
             Route::get('/reports', function () {
                 return view('components.report');
@@ -159,6 +177,7 @@ use App\Http\Controllers\{CartController,
             Route::get('/test', function () {
                 return view('test');
             });
+
             Route::get('/testcalendar', function () {
                 return view('testcalendar');
             });
@@ -173,8 +192,7 @@ use App\Http\Controllers\{CartController,
                 $my_array = ['array1', 'array2', 'array3', 'array4', 'array5'];
                 return view('test/greeting')
                     ->with('name', 'yonathan')
-                    ->with('array', $my_array );
-                 });
+                    ->with('array', $my_array);
             });
 
             # Routes without 'auth' middleware for testing purposes
@@ -198,6 +216,7 @@ use App\Http\Controllers\{CartController,
             Route::get('/user/{id}/{name}', function (string $id, string $name) {
                 return "User ID: $id, Name: $name";
             })->whereNumber('id')->whereAlpha('name');
+        });
 
 
         //
